@@ -1,0 +1,491 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.top-bar {
+    background-color: transparent; /* Azul */
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.right-content a img {
+    width: 35px; /* Ajusta el tamaño del ícono */
+    height: 35px;
+    margin-left: 25px; /* Espacio entre los íconos */
+}
+
+.right-content a {
+    text-decoration: none;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 5px solid #007bff; /* Franja azul brillante */
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-nombre {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nombre-liceo {
+    font-size: 24px;
+    color: #333;
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/* Icono de búsqueda */
+.search-icon {
+    position: absolute;
+    top: 30%;
+    right: 20px; /* Posiciona el ícono justo a la derecha de los botones */
+}
+
+/* Contenedor de los botones en la parte superior derecha */
+.header-buttons {
+    position: absolute;
+    top: 15%;
+    right: 50px;
+    display: flex;
+    gap: 25px; /* Espacio entre los botones */
+}
+
+.btn-image img {
+    height: 45px; /* Ajusta según el tamaño deseado de los botones */
+    width: auto;
+    display: block;
+    border: 1px solid #192a56;
+    border-radius: 5px;
+}
+
+/* Barra de búsqueda */
+/* Estilos para la barra de búsqueda */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Barra de búsqueda desplegable que ocupa todo el ancho de la pantalla */
+.full-search-bar {
+    display: none;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.full-search-bar input {
+    width: 80%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.full-search-bar button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff5722;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-results {
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    display: none;
+}
+
+#search-results a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#search-results a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .full-search-bar input {
+        width: 70%;
+        font-size: 16px;
+    }
+
+    .full-search-bar button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .full-search-bar input {
+        width: 60%;
+        font-size: 14px;
+    }
+
+    .full-search-bar button {
+        font-size: 14px;
+    }
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/*Barra Navegacion*/
+.navbar {
+    background-color: #192a56;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.dropdown .dropbtn {
+    font-size: 15px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*Slider de Imagenes*/
+.slider-container {
+    position: relative;
+    width: 100%; /* Se ajusta al 100% del contenedor */
+    height: 992px; /* Para que se ajuste al contenido */
+    max-height: 850px; /* Elimina la altura máxima fija */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Transición más suave y lenta */
+    width: 300%;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Mantiene las proporciones de la imagen */
+    object-fit: contain; /* Asegura que la imagen completa se muestre sin recortarse */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background-color: #007BFF;
+    width: 100%; /* Se inicializa al 100% */
+    animation: progress 5s linear infinite; /* 5 segundos de duración */
+}
+
+@keyframes progress {
+    0% { width: 100%; }
+    100% { width: 0%; } /* Disminuye desde 100% a 0% */
+}
+
+
+
+/* Sellos educativos */
+.sellos {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color:#192a56;
+    color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.sello {
+    width: 30%;
+    text-align: center;
+}
+
+/*Secion Mensaje Director*/
+.director-message {
+    width: auto;
+    padding: 40px 20px;
+    background-color: #ffa801; /* Color de fondo suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.director-container {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.director-image img {
+    width: 250px; /* Tamaño de la imagen del director */
+    height: 250px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Ajusta la imagen para que se vea bien en el círculo */
+}
+
+.director-text {
+    max-width: 700px;
+    color: #333;
+}
+
+.director-text h2 {
+    margin: 0;
+    font-size: 24px;
+    color: black; /* Color del nombre del director */
+}
+
+.director-text p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Sección de noticias y galería */
+.news-and-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #192a56;
+}
+
+/* Estilo para la sección de noticias */
+.news-section, .gallery-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.news-section h2, .gallery-section h2 {
+    text-align: center;
+    color: #007bff; /* Color del título */
+}
+
+.news-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Sección de noticias y galería */
+.news-and-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #192a56;
+}
+
+/* Estilo para la sección de noticias */
+.news-section, .gallery-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.news-section h2, .gallery-section h2 {
+    text-align: center;
+    color: #007bff; /* Color del título */
+}
+
+.news-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Estilo para los elementos de noticias */
+.news-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.news-item p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Estilo para los elementos de la galería */
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Contactos */
+.contactos {
+    padding: 20px;
+    background-color: #192a56;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Footer*/
+.footer {
+    background-color: #192a56;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    max-height: 150px; /* Ajusta el tamaño del logo según tus necesidades */
+    max-width: 150%;
+}
+
+.footer-contacts {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-buttons .btn {
+    background-color: #007BFF; /* Color del botón */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-buttons .btn:hover {
+    background-color: #0056b3; /* Color del botón al pasar el ratón */
+}
